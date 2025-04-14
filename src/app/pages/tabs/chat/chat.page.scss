@@ -1,0 +1,20 @@
+ion-footer{
+    ion-toolbar{
+        padding: 0;
+        ion-button{
+            --border-radius: 50px;
+    
+        }
+        ion-textarea{
+            border: 1px solid var(--ion-color-medium);
+            border-radius: 20px;
+            margin: 0.5vh 1vh 0.5vh 0;
+            align-content: center;
+    
+        }
+    }
+}
+
+ion-list{
+    margin-bottom: 5vh;
+}
