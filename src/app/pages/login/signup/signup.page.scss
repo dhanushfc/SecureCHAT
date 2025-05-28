@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ion-header{
     ion-toolbar{
         --background: dark;
@@ -18,3 +19,25 @@ ion-card{
         }
     }
 }
+=======
+ion-header{
+    ion-toolbar{
+        --background: dark;
+    }
+}
+div.logo{
+    margin: 5vh 0 2vh 0;
+    img {
+        height: 25vh;
+    }
+}
+
+ion-card{
+    ion-input{
+        font-size: 1rem;
+        ion-icon{
+            font-size: 1.2rem;
+        }
+    }
+}
+>>>>>>> 6696688f7c9b5c348538fe38556b2ca217b986ae

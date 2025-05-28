@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <ion-header>
   <ion-toolbar>
     <ion-title align="center">New Chat</ion-title>
@@ -27,4 +28,35 @@
     </ion-list>
 
   }
+=======
+<ion-header>
+  <ion-toolbar>
+    <ion-title align="center">New Chat</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="closeModal()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  @if(users()) {
+
+    <ion-list lines="full">
+      @for(user of users(); track $index) {
+        <ion-item (click)="startChat(user)">
+          <ion-avatar slot="start">
+            <ion-img [src]="user?.photo" />
+          </ion-avatar>
+    
+          <ion-label>{{ user?.name }}</ion-label>
+        </ion-item>
+      }
+    </ion-list>
+
+  }
+>>>>>>> 6696688f7c9b5c348538fe38556b2ca217b986ae
 </ion-content>

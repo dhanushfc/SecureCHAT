@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <ion-content [fullscreen]="true">
   <div align="center" class="logo">
     <img src="assets/imgs/logo.png">
@@ -70,3 +71,77 @@
   </ion-modal>
 
 </ion-content>
+=======
+<ion-content [fullscreen]="true">
+  <div align="center" class="logo">
+    <img src="assets/imgs/logo.png">
+  </div>
+  <ion-card class="ion-padding">
+    <form [formGroup]="form">
+      <ion-input placeholder="Email" type="email" formControlName="email" class="ion-margin-bottom" errorText="* Please enter your Email">
+        <ion-icon name="mail-outline" slot="start"></ion-icon>
+      </ion-input>
+
+      <ion-input placeholder="Password" type="password" formControlName="password" [errorText]="form.get('password')?.hasError('minlength') ? '* Password must be at least 8 characters long' : '* Please enter your Password'">
+        <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+        <ion-input-password-toggle slot="end" color="primary"></ion-input-password-toggle>
+      </ion-input>
+
+      <div align="right">
+        <ion-button fill="clear" size="small" color="medium" (click)="setFp(true)">
+          Forgot Password?
+        </ion-button>
+      </div>
+
+      <!-- Change this part with *ngIf -->
+      <ion-button *ngIf="!isLogin()" size="large" expand="block" class="ion-margin-top ion-padding" [strong]="true" (click)="onSubmit()">
+        <ion-text>Login</ion-text>
+      </ion-button>
+
+      <ion-button *ngIf="isLogin()" size="large" fill="outline" expand="block" class="ion-margin-top ion-padding" [strong]="true">
+        <ion-spinner name="crescent"></ion-spinner>
+      </ion-button>
+    </form>
+  </ion-card>
+
+  <div align="center" class="signup">
+    <ion-text>Don't have an account?</ion-text>
+    <ion-button fill="clear" size="small" color="dark" [strong]="true" routerLink="signup">Signup</ion-button>
+  </div>
+
+  <ion-alert [isOpen]="!!errorMessage()" (didDismiss)="setErrorMessage(null)" header="Alert" [message]="errorMessage()" [buttons]="['OK']">
+
+  </ion-alert>
+
+  <ion-modal [isOpen]="isFpModal()" (didDismiss)="setFp(false)" [breakpoints]="[0.5, 0.8, 1]" [initialBreakpoint]="0.8">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title align="center">Reset Password</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <form [formGroup]="fpForm">
+
+          <div class="ion-margin ion-padding">
+            <ion-input placeholder="Email" type="email" formControlName="email" errorText="* Please enter your Email">
+              <ion-icon name="mail-outline" slot="start"></ion-icon>
+            </ion-input>
+          </div>
+
+        </form>
+
+        <ion-button *ngIf="!isForgot()" size="large" expand="block" class="ion-margin ion-padding-top" [strong]="true" (click)="onFpSubmit()">
+          <ion-text>Send Link</ion-text>
+        </ion-button>
+  
+        <ion-button *ngIf="isForgot()" size="large" fill="outline" expand="block" class="ion-margin ion-padding-top" [strong]="true">
+          <ion-spinner name="crescent"></ion-spinner>
+        </ion-button>
+
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+</ion-content>
+>>>>>>> 6696688f7c9b5c348538fe38556b2ca217b986ae
