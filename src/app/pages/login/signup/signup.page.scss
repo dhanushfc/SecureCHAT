@@ -1,0 +1,20 @@
+ion-header{
+    ion-toolbar{
+        --background: dark;
+    }
+}
+div.logo{
+    margin: 5vh 0 2vh 0;
+    img {
+        height: 25vh;
+    }
+}
+
+ion-card{
+    ion-input{
+        font-size: 1rem;
+        ion-icon{
+            font-size: 1.2rem;
+        }
+    }
+}
